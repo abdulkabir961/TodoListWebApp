@@ -1,0 +1,61 @@
+﻿@model TodoListViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <h1>Edit Todo List</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" asp-controller="TodoList">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EmailAddress"></label>
+                    <input asp-for="EmailAddress" class="form-control" />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ListContent"></label>
+                    <input asp-for="ListContent" class="form-control" />
+                    <span asp-validation-for="ListContent" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Time"></label>
+                    <input asp-for="Time" class="form-control" />
+                    <span asp-validation-for="Time" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Priority"></label>
+                    <select asp-for="Priority" class="form-control">
+                        <option>--Select Priority--</option>
+                        <option>Critical/severe</option>
+                        <option>Major/high</option>
+                        <option>Medium</option>
+                        <option>Minor/low</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-success" value="Update" />
+                    <a asp-controller="TodoList" asp-action="Index" class="btn btn-secondary">
+                        Back to List
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
